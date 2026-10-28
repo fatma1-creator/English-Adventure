@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>English Adventure 8 – مغامرة الإنجليزية</title>
+<style>
+:root{--navy:#18233f;--ink:#24304c;--cream:#fffaf0;--purple:#7657d5;--teal:#26a69a;--gold:#f6c453;--pink:#f08aa8;--sky:#dff3ff}
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:linear-gradient(145deg,#dff5ff,#f5eaff 55%,#fff4d8);color:var(--ink);min-height:100vh}
+button,input{font:inherit}button{cursor:pointer;border:0;border-radius:14px;padding:11px 16px;font-weight:700;transition:.15s}button:hover{transform:translateY(-1px);filter:brightness(1.03)}button:focus-visible{outline:3px solid #222;outline-offset:3px}
+.app{max-width:1100px;margin:auto;padding:18px}.top{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}.brand{display:flex;gap:12px;align-items:center}.logo{font-size:34px;background:white;border-radius:18px;padding:10px;box-shadow:0 6px 18px #24304c18}.brand h1{font-size:clamp(21px,4vw,32px);margin:0;color:#28244f}.brand p{margin:4px 0;color:#5c6680}.controls{display:flex;gap:8px;flex-wrap:wrap}.soft{background:#fff;color:#394362;box-shadow:0 3px 10px #24304c12}.primary{background:var(--purple);color:white}.teal{background:var(--teal);color:white}.gold{background:var(--gold);color:#45330a}.panel{background:#ffffffdf;border:1px solid #fff;border-radius:24px;padding:clamp(16px,3vw,28px);box-shadow:0 12px 35px #35456812;margin-top:18px}.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:20px;align-items:center;background:linear-gradient(120deg,#fff,#f2edff)}.hero h2{font-size:clamp(25px,4vw,38px);margin:0 0 10px}.hero p{line-height:1.8}.hero-art{text-align:center;font-size:clamp(65px,10vw,110px);background:linear-gradient(135deg,#d7f8f0,#e9e0ff);border-radius:24px;padding:20px}.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.stat{background:#f6f4ff;border-radius:14px;padding:10px 14px;font-weight:700}.section-title{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.section-title h2{margin:0}.map{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:16px}.island{border-radius:20px;padding:16px;background:white;border:2px solid #edf0fb;min-height:150px;display:flex;flex-direction:column;gap:8px}.island .emoji{font-size:35px}.island h3{margin:0}.island p{margin:0;color:#65708a;font-size:14px;line-height:1.5;flex:1}.island button{align-self:flex-start}.island.done{border-color:#8dd7c9;background:#f2fffb}.pill{font-size:12px;background:#f2edff;color:#6046b6;padding:5px 9px;border-radius:99px;align-self:flex-start}.hidden{display:none!important}.question-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}.progress{height:9px;background:#e9eaf3;border-radius:99px;overflow:hidden;margin:12px 0 20px}.progress span{display:block;height:100%;background:linear-gradient(90deg,#25b5a4,#8b6be8);width:0%;transition:.3s}.lesson{background:#f8f7ff;padding:14px;border-radius:16px;line-height:1.8;margin-bottom:18px}.prompt{font-size:clamp(21px,4vw,29px);font-weight:800;text-align:center;margin:18px 0}.visual{font-size:clamp(50px,9vw,76px);text-align:center;margin:12px}.options{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}.option{background:#fff;border:2px solid #e5e7f3;color:#273452;min-height:56px;font-size:18px}.option.correct{border-color:#2ab49b;background:#e8fff8}.option.wrong{border-color:#ed7891;background:#fff0f3}.feedback{margin-top:15px;padding:14px;border-radius:14px;line-height:1.7}.feedback.good{background:#e7fff6;color:#126d5e}.feedback.try{background:#fff5df;color:#77551a}.bottom-actions{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:18px}.small{font-size:13px;color:#68738d}.input-answer{width:100%;max-width:280px;padding:13px;border:2px solid #dfe3f1;border-radius:12px;text-align:center;font-size:20px}.review-row{padding:12px;border-bottom:1px solid #edf0f7;line-height:1.7}.badge{display:inline-block;background:#fff2bf;color:#72520a;padding:7px 10px;border-radius:99px;margin:4px;font-weight:bold}.footer{text-align:center;padding:22px;color:#68738d;font-size:13px}
+@media(max-width:650px){.hero{grid-template-columns:1fr}.hero-art{order:-1}.app{padding:12px}.panel{border-radius:18px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+ <div class="brand"><div class="logo">🧭</div><div><h1>English Adventure 8</h1><p>مغامرة الإنجليزية • تعلّم خطوة خطوة</p></div></div>
+ <div class="controls"><button class="soft" id="soundBtn" aria-pressed="true">🔊 الصوت: تشغيل</button><button class="soft" id="musicBtn" aria-pressed="false">🎵 الموسيقى: إيقاف</button></div>
+</header>
+<section id="home">
+ <div class="panel hero"><div><span class="pill">مهمتك اليوم: تعلّم واجمع النجوم ⭐</span><h2>كل محاولة بتقرّبك من الهدف!</h2><p>اختَر جزيرة، تعلّم كلمات بسيطة، جرّب الأنشطة، واجمع النجوم. التعليمات بالعربية، والكلمات الإنجليزية قصيرة وواضحة. لا يوجد عقاب على الخطأ — جرّب مرة أخرى وتعلّم.</p><div class="stats"><div class="stat">⭐ النجوم: <span id="stars">0</span></div><div class="stat">🏝️ المراحل المكتملة: <span id="completed">0</span>/8</div><div class="stat">🎖️ الشارات: <span id="badges">0</span></div></div><div class="bottom-actions" style="justify-content:flex-start"><button class="primary" id="continueBtn">تابع التعلّم ←</button><button class="teal" id="examBtn">اختبار تجريبي / 100</button><button class="soft" id="reviewBtn">راجع أخطائي</button></div></div><div class="hero-art" aria-label="خريطة مغامرة">🏝️<br>🗝️⭐</div></div>
+ <div class="panel"><div class="section-title"><h2>🗺️ خريطة المغامرة</h2><span class="small">افتح أي منطقة وابدأ بالتعلّم</span></div><div class="map" id="map"></div></div>
+</section>
+<section id="game" class="panel hidden">
+ <div class="question-head"><div><span class="pill" id="areaPill">المرحلة</span><h2 id="gameTitle">تدرّب</h2></div><div class="stat">⭐ <span id="gameStars">0</span> نجمة في هذه المرحلة</div></div>
+ <div class="progress"><span id="bar"></span></div><div class="lesson" id="lesson"></div>
+ <div id="activity"><div class="visual" id="visual"></div><div class="prompt" id="prompt"></div><div id="inputArea" class="hidden" style="text-align:center;margin-bottom:12px"><input class="input-answer" id="answerInput" aria-label="اكتب الإجابة" placeholder="اكتب الإجابة هنا"></div><div class="options" id="options"></div><div id="feedback" class="feedback hidden" role="status"></div><div class="bottom-actions"><button class="soft" id="hintBtn">💡 تلميح</button><button class="soft" id="speakBtn">🔊 اسمع الكلمة</button><button class="primary hidden" id="nextBtn">السؤال التالي ←</button><button class="soft" id="homeBtn">العودة للخريطة</button></div></div>
+</section>
+<section id="exam" class="panel hidden">
+ <div class="question-head"><div><span class="pill">الاستعداد للامتحان</span><h2>الاختبار التجريبي</h2></div><div class="stat">السؤال <span id="examNum">1</span>/<span id="examTotal">20</span></div></div>
+ <p>كل سؤال عليه 5 علامات. المجموع 100. اختَر الإجابة ثم اضغط «تأكيد الإجابة». لن تظهر الإجابة قبل أن تجيب.</p><div class="progress"><span id="examBar"></span></div><div class="visual" id="examVisual"></div><div class="prompt" id="examPrompt"></div><div class="options" id="examOptions"></div><div id="examFeedback" class="feedback hidden" role="status"></div><div class="bottom-actions"><button class="primary" id="examConfirm">تأكيد الإجابة</button><button class="soft" id="examExit">العودة للخريطة</button></div>
+</section>
+<section id="results" class="panel hidden"><div style="text-align:center"><div class="visual">🏆</div><h2 id="resultTitle">أحسنت!</h2><div style="font-size:42px;font-weight:900;color:#7657d5"><span id="resultScore">0</span>/100</div><p id="resultText"></p><div id="recommendations"></div><div class="bottom-actions"><button class="primary" id="retryExam">إعادة الاختبار</button><button class="teal" id="resultsHome">العودة للخريطة</button><button class="soft" id="resultsReview">راجع أخطائي</button></div></div></section>
+<section id="review" class="panel hidden"><div class="section-title"><h2>🧩 راجع أخطائي</h2><button class="soft" id="reviewHome">العودة للخريطة</button></div><div id="reviewList"></div></section>
+<div class="footer">نسخة تجريبية تعمل داخل المتصفح • التقدّم يُحفظ على هذا الجهاز إن كان التخزين المحلي متاحًا. لا تُدخل معلومات شخصية.</div>
+</div>
+<script>
+const areas=[
+{id:'letters',name:'Letter Land',ar:'عالم الحروف',emoji:'🔤',desc:'تعرّف إلى الحروف الكبيرة والصغيرة A–Z.',lesson:'الحرف الكبير والصغير لهما الاسم والصوت نفسيهما. مثال: A a — apple 🍎. تدرّب على شكل الحرف ثم اختَر الإجابة.',qs:[
+['ما الحرف الصغير للحرف B؟','🐝',['b','d','p'],'b','الحرف B الكبير يقابله b الصغير.'],
+['اختَر الحرف الكبير لـ g.','🦒',['G','C','Q'],'G','الحرف الكبير لـ g هو G.'],
+['أي كلمة تبدأ بحرف A؟','🍎',['apple','book','cat'],'apple','apple تبدأ بحرف A.'],
+['اختَر الحرف الذي يأتي بعد D.','🔤',['C','E','G'],'E','ترتيب الحروف: C, D, E.'],
+['أي زوج صحيح؟','🔡',['F – f','F – e','F – t'],'F – f','الحرف الكبير والصغير هنا هما F و f.']]},
+{id:'sounds',name:'Sound Cave',ar:'كهف الأصوات',emoji:'🗣️',desc:'تدرّب على ch, sh, ph, th.',lesson:'أحيانًا يعمل حرفان معًا لصنع صوت واحد: sh في ship، وch في chair، وph في phone، وth في three. انظر إلى الكلمة وابحث عن الحرفين معًا.',qs:[
+['أي جزء نسمعه في ship؟','🚢',['sh','ch','ph'],'sh','كلمة ship تبدأ بـ sh.'],
+['أكمل: __air','🪑',['ch','sh','th'],'ch','chair تُكتب ch + air.'],
+['أي كلمة تحتوي على ph؟','📱',['phone','shop','thin'],'phone','phone تحتوي على ph.'],
+['أكمل: __ree','3️⃣',['th','ch','sh'],'th','three تبدأ بـ th.'],
+['أي كلمة تبدأ بـ sh؟','🛍️',['shop','chair','phone'],'shop','shop تبدأ بالحرفين sh.']]},
+{id:'numbers',name:'Number Island',ar:'جزيرة الأرقام',emoji:'🔢',desc:'الأرقام من 1 إلى 20، مع جمع وطرح بسيط.',lesson:'تعلّم الرقم مع كتابته: 1 one، 2 two، 3 three، 10 ten، 12 twelve، 20 twenty. احسب بهدوء ثم اختَر أو اكتب الإجابة.',qs:[
+['12 = ؟','🔢',['twelve','twenty','two'],'twelve','الرقم 12 يُكتب twelve.'],
+['one + two = ؟','🍎',['3','4','2'],'3','واحد زائد اثنين يساوي ثلاثة (three).'],
+['four − two = ؟','⭐',['1','2','3'],'2','أربعة ناقص اثنين يساوي اثنين.'],
+['أي رقم هو fifteen؟','🔢',['5','15','50'],'15','fifteen هو الرقم 15.'],
+['19 = ؟','🔢',['nineteen','ninety','nine'],'nineteen','19 تُكتب nineteen.']]},
+{id:'week',name:'Week Village',ar:'قرية أيام الأسبوع',emoji:'📅',desc:'أيام الأسبوع بالترتيب.',lesson:'أيام الأسبوع بالإنجليزية: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday. تبدأ أسماء الأيام بحرف كبير.',qs:[
+['ما اليوم الذي يأتي بعد Monday؟','📅',['Sunday','Tuesday','Friday'],'Tuesday','بعد Monday يأتي Tuesday.'],
+['أي كلمة تعني الجمعة؟','🎉',['Friday','Tuesday','Sunday'],'Friday','Friday تعني يوم الجمعة.'],
+['ما أول حرف في Saturday؟','🔠',['S','T','F'],'S','Saturday تبدأ بحرف S كبير.'],
+['ما اليوم الذي يأتي قبل Thursday؟','📆',['Wednesday','Friday','Monday'],'Wednesday','قبل Thursday يأتي Wednesday.'],
+['اختَر اسم يوم صحيحًا.','🗓️',['monday','Monday','MONday'],'Monday','نكتب اسم اليوم بحرف كبير في البداية.']]},
+{id:'family',name:'Family House',ar:'بيت العائلة',emoji:'🏡',desc:'أسماء أفراد العائلة الأساسية.',lesson:'احفظ الكلمات مع الصورة: mother = أم، father = أب، sister = أخت، brother = أخ، grandmother = جدة، grandfather = جد.',qs:[
+['👩 الأم هي…','👩',['mother','sister','brother'],'mother','mother تعني أم.'],
+['👦 الأخ هو…','👦',['father','brother','grandfather'],'brother','brother تعني أخ.'],
+['👧 الأخت هي…','👧',['sister','mother','grandmother'],'sister','sister تعني أخت.'],
+['👴 الجد هو…','👴',['grandfather','father','brother'],'grandfather','grandfather تعني جد.'],
+['👵 الجدة هي…','👵',['grandmother','mother','sister'],'grandmother','grandmother تعني جدة.']]},
+{id:'colors',name:'Color City',ar:'مدينة الألوان',emoji:'🎨',desc:'تعرّف إلى الألوان الأساسية.',lesson:'اقرأ اسم اللون ولا تعتمد على اللون وحده: red = أحمر، blue = أزرق، green = أخضر، yellow = أصفر، black = أسود، white = أبيض، pink = زهري.',qs:[
+['ما لون الموز غالبًا؟','🍌',['yellow','blue','black'],'yellow','yellow تعني أصفر.'],
+['اختَر معنى red.','🟥',['أحمر','أخضر','أبيض'],'أحمر','red تعني أحمر.'],
+['ما لون العشب غالبًا؟','🌱',['green','pink','black'],'green','green تعني أخضر.'],
+['اختَر اللون الأزرق.','🎨',['blue','white','red'],'blue','blue تعني أزرق.'],
+['ما عكس black في هذه الكلمات؟','⬜',['white','pink','green'],'white','white تعني أبيض.']]},
+{id:'pronouns',name:'Pronoun Forest',ar:'غابة الضمائر',emoji:'🌳',desc:'I, you, he, she, it, we, they.',lesson:'I = أنا، you = أنت/أنتم، he = هو، she = هي، it = لشيء أو حيوان، we = نحن، they = هم/هن. انتبه لمن تتحدث عنه.',qs:[
+['___ am a student.','🙋',['I','He','They'],'I','نستخدم I مع am.'],
+['Ahmed is a boy. ___ is happy.','👦',['He','She','We'],'He','Ahmed ولد، لذلك نستخدم He.'],
+['Mona is a girl. ___ is nice.','👧',['He','She','It'],'She','Mona بنت، لذلك نستخدم She.'],
+['The cat is small. ___ is cute.','🐱',['It','They','We'],'It','للحيوان المفرد هنا نستخدم It.'],
+['Ali and I = ___','👫',['we','he','she'],'we','Ali and I تعني نحن (we).']]},
+{id:'grammar',name:'Grammar Castle',ar:'قلعة القواعد',emoji:'🏰',desc:'اختَر am أو is أو are.',lesson:'احفظها هكذا: I am. He / She / It is. You / We / They are. اقرأ الضمير أولًا ثم اختَر الفعل المناسب.',qs:[
+['I ___ happy.','😊',['am','is','are'],'am','مع I نستخدم am.'],
+['She ___ my sister.','👧',['am','is','are'],'is','مع She نستخدم is.'],
+['They ___ friends.','🧑‍🤝‍🧑',['am','is','are'],'are','مع They نستخدم are.'],
+['We ___ at school.','🏫',['is','am','are'],'are','مع We نستخدم are.'],
+['It ___ blue.','🔵',['are','is','am'],'is','مع It نستخدم is.']]}
+];
+let state={stars:0,done:[],badges:[],mistakes:[],area:null,q:0,tries:0,earned:0,examAnswers:[],examIndex:0,examScore:0,sound:true,music:false};
+try{const saved=JSON.parse(localStorage.getItem('englishAdventure8')||'{}');state={...state,...saved};}catch(e){}
+const $=id=>document.getElementById(id);
+function save(){try{localStorage.setItem('englishAdventure8',JSON.stringify({...state,area:null}));}catch(e){}}
+function speak(text){if(!state.sound||!('speechSynthesis'in window))return;try{speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=.82;speechSynthesis.speak(u)}catch(e){}}
+function show(id){['home','game','exam','results','review'].forEach(x=>$(x).classList.toggle('hidden',x!==id));window.scrollTo({top:0,behavior:'smooth'})}
+function updateStats(){$('stars').textContent=state.stars;$('completed').textContent=state.done.length;$('badges').textContent=state.badges.length}
+function renderMap(){$('map').innerHTML='';areas.forEach((a,i)=>{let d=document.createElement('div');d.className='island '+(state.done.includes(a.id)?'done':'');d.innerHTML=`<div class="emoji">${a.emoji}</div><span class="pill">${state.done.includes(a.id)?'✓ مكتملة':'منطقة '+(i+1)}</span><h3>${a.name}</h3><strong>${a.ar}</strong><p>${a.desc}</p><button class="${state.done.includes(a.id)?'teal':'primary'}">ابدأ المغامرة ←</button>`;d.querySelector('button').onclick=()=>startArea(a.id);$('map').appendChild(d)});updateStats()}
+function startArea(id){state.area=id;state.q=0;state.tries=0;state.earned=0;show('game');renderQuestion()}
+function current(){return areas.find(a=>a.id===state.area)}
+function renderQuestion(){let a=current(),q=a.qs[state.q];if(!q){finishArea();return}
+$('areaPill').textContent=a.name+' • '+a.ar;$('gameTitle').textContent='تعلّم ثم جرّب';$('gameStars').textContent=state.earned;$('bar').style.width=(state.q/a.qs.length*100)+'%';$('lesson').innerHTML='<strong>📘 تذكّر:</strong> '+a.lesson;$('visual').textContent=q[1];$('prompt').textContent=q[0];$('options').innerHTML='';$('feedback').className='feedback hidden';$('nextBtn').classList.add('hidden');$('hintBtn').disabled=false;$('inputArea').classList.add('hidden');
+q[2].forEach(opt=>{let b=document.createElement('button');b.className='option';b.textContent=opt;b.onclick=()=>answer(opt,b);$('options').appendChild(b)});$('speakBtn').onclick=()=>speak(q[3]);}
+function answer(opt,btn){if(!$('nextBtn').classList.contains('hidden'))return;let q=current().qs[state.q];state.tries++;if(opt===q[3]){btn.classList.add('correct');document.querySelectorAll('.option').forEach(b=>b.disabled=true);$('feedback').className='feedback good';$('feedback').textContent='⭐ أحسنت! '+q[4];if(state.tries===1){state.earned++;state.stars++;} $('nextBtn').classList.remove('hidden');$('hintBtn').disabled=true;save();}else{btn.classList.add('wrong');$('feedback').className='feedback try';$('feedback').textContent=state.tries===1?'محاولة جيدة! خلينا نفكر مع بعض. 💡 '+hintFor(q):'قريب! تذكّر: '+q[4]+' جرّب خيارًا آخر.';state.mistakes.push({topic:current().ar,q:q[0],your:opt,correct:q[3],why:q[4]});save();if(state.tries>=2){$('feedback').textContent='تعلّم من المحاولة: '+q[4]+' اختَر الإجابة الصحيحة الآن لتكمل.';}}
+}
+function hintFor(q){return 'اقرأ السؤال مرة ثانية، وانظر إلى الصورة، ثم جرّب خيارًا آخر.'}
+$('hintBtn').onclick=()=>{let q=current().qs[state.q];$('feedback').className='feedback try';$('feedback').textContent='💡 تلميح: '+hintFor(q);};
+$('nextBtn').onclick=()=>{state.q++;state.tries=0;renderQuestion()};
+function finishArea(){if(!state.done.includes(state.area)){state.done.push(state.area);state.badges.push(current().name);state.stars+=2;}save();renderMap();show('home');alert('🎉 أحسنت! أنهيت '+current().ar+' وحصلت على شارة.')}
+const examTopics=[
+['اختَر الحرف الصغير لـ M.','🔤',['m','n','w'],'m','الحرف الصغير لـ M هو m','الحروف'],
+['أي كلمة تبدأ بـ A؟','🍎',['apple','fish','book'],'apple','apple تبدأ بحرف A','الحروف'],
+['أي كلمة تحتوي على sh؟','🚢',['ship','chair','phone'],'ship','ship تحتوي على sh','الأصوات المركبة'],
+['أكمل: __ree','3️⃣',['th','ph','ch'],'th','three تبدأ بـ th','الأصوات المركبة'],
+['الرقم 8 بالإنجليزية هو…','🔢',['eight','eighteen','eighty'],'eight','eight تعني 8','الأرقام'],
+['six + two = ؟','🧮',['7','8','9'],'8','6 + 2 = 8','الأرقام'],
+['14 = ؟','🔢',['fourteen','forty','four'],'fourteen','14 تُكتب fourteen','الأرقام'],
+['ما اليوم بعد Sunday؟','📅',['Monday','Friday','Saturday'],'Monday','بعد Sunday يأتي Monday','أيام الأسبوع'],
+['أي كلمة تعني Thursday؟','📆',['الخميس','الثلاثاء','الجمعة'],'الخميس','Thursday تعني الخميس','أيام الأسبوع'],
+['الأب هو…','👨',['father','brother','grandfather'],'father','father تعني أب','العائلة'],
+['الأخت هي…','👧',['sister','mother','grandmother'],'sister','sister تعني أخت','العائلة'],
+['ما معنى blue؟','🔵',['أزرق','أحمر','أصفر'],'أزرق','blue تعني أزرق','الألوان'],
+['ما لون الورق غالبًا؟','📄',['white','green','pink'],'white','white تعني أبيض','الألوان'],
+['Mona is a girl. ___ is happy.','👧',['She','He','It'],'She','نستخدم She عند الحديث عن Mona','الضمائر'],
+['Ali and Omar = ___','👬',['they','we','it'],'they','Ali and Omar تعني they','الضمائر'],
+['I ___ a student.','🎒',['am','is','are'],'am','مع I نستخدم am','am / is / are'],
+['He ___ my brother.','👦',['is','am','are'],'is','مع He نستخدم is','am / is / are'],
+['We ___ friends.','🤝',['are','is','am'],'are','مع We نستخدم are','am / is / are'],
+['خمسة ناقص اثنين = ؟','🧮',['three','four','six'],'three','5 − 2 = 3، three','الأرقام'],
+['أي كلمة تبدأ بـ ph؟','📱',['phone','shop','thin'],'phone','phone تبدأ بـ ph','الأصوات المركبة']
+];
+let examPicked=[],examChosen=null;
+function startExam(){examPicked=examTopics.map((q,i)=>({...q,original:i}));state.examIndex=0;state.examAnswers=[];state.examScore=0;examChosen=null;show('exam');renderExam()}
+function renderExam(){let q=examPicked[state.examIndex];$('examTotal').textContent=examPicked.length;$('examNum').textContent=state.examIndex+1;$('examBar').style.width=(state.examIndex/examPicked.length*100)+'%';$('examVisual').textContent=q[1];$('examPrompt').textContent=q[0];$('examOptions').innerHTML='';$('examFeedback').className='feedback hidden';$('examConfirm').disabled=false;$('examConfirm').textContent=state.examIndex===examPicked.length-1?'إنهاء الاختبار':'تأكيد الإجابة';examChosen=null;q[2].forEach(o=>{let b=document.createElement('button');b.className='option';b.textContent=o;b.onclick=()=>{if(!$('examConfirm').disabled){examChosen=o;document.querySelectorAll('#examOptions .option').forEach(x=>x.classList.remove('correct'));b.classList.add('correct')}};$('examOptions').appendChild(b)});}
+$('examConfirm').onclick=()=>{if(examChosen===null){$('examFeedback').className='feedback try';$('examFeedback').textContent='اختَر إجابة أولًا، ثم أكّدها.';return}let q=examPicked[state.examIndex];state.examAnswers.push({topic:q[5],q:q[0],your:examChosen,correct:q[3],why:q[4],ok:examChosen===q[3]});if(examChosen===q[3])state.examScore+=5;$('examFeedback').className='feedback '+(examChosen===q[3]?'good':'try');$('examFeedback').textContent=examChosen===q[3]?'صحيح! '+q[4]:'تم تسجيل إجابتك. ستظهر الإجابة الصحيحة والشرح بعد إنهاء الاختبار.';$('examConfirm').disabled=true;setTimeout(()=>{if(state.examIndex<examPicked.length-1){state.examIndex++;renderExam()}else finishExam()},750)};
+function finishExam(){show('results');$('resultScore').textContent=state.examScore;$('resultTitle').textContent=state.examScore>=80?'رائع! 🏆':state.examScore>=60?'تقدّم جيد! ⭐':'كل محاولة تعلّم جديد! 🌱';$('resultText').textContent='أجبتِ عن '+state.examAnswers.filter(a=>a.ok).length+' من '+examPicked.length+' أسئلة بشكل صحيح. راجعي الأخطاء ثم جرّبي مرة أخرى.';let wrong=state.examAnswers.filter(a=>!a.ok);let topics={};wrong.forEach(a=>topics[a.topic]=(topics[a.topic]||0)+1);$('recommendations').innerHTML='<h3>ماذا تراجعين؟</h3>'+(Object.keys(topics).length?Object.entries(topics).map(([k,v])=>`<span class="badge">${k}: ${v} خطأ</span>`).join(''):'<span class="badge">ممتاز! راجعي كل المهارات للمحافظة على مستواك.</span>')+'<h3>مراجعة الإجابات</h3>'+state.examAnswers.map((a,i)=>`<div class="review-row"><strong>${i+1}. ${a.q}</strong><br>${a.ok?'✅ إجابتك صحيحة':'❌ إجابتك: '+a.your+' — الصحيح: '+a.correct}<br><span class="small">${a.why}</span></div>`).join('');}
+function showReview(){show('review');let all=[...state.mistakes.map(m=>({...m,source:'تدريب'})),...state.examAnswers.filter(a=>!a.ok).map(a=>({...a,source:'الاختبار'}))];$('reviewList').innerHTML=all.length?all.slice(-40).reverse().map((m,i)=>`<div class="review-row"><span class="pill">${m.source} • ${m.topic||''}</span><br><strong>${m.q}</strong><br>الإجابة الصحيحة: <b>${m.correct}</b><br><span class="small">${m.why}</span></div>`).join(''):'لا توجد أخطاء محفوظة بعد. ابدئي التدريب أو الاختبار وستظهر هنا الأسئلة التي تحتاج إلى مراجعة.'}
+$('examBtn').onclick=startExam;$('retryExam').onclick=startExam;$('reviewBtn').onclick=showReview;$('resultsReview').onclick=showReview;$('reviewHome').onclick=()=>show('home');$('homeBtn').onclick=()=>{renderMap();show('home')};$('examExit').onclick=()=>show('home');$('resultsHome').onclick=()=>{renderMap();show('home')};$('continueBtn').onclick=()=>{let a=areas.find(a=>!state.done.includes(a.id))||areas[0];startArea(a.id)};$('soundBtn').onclick=()=>{state.sound=!state.sound;$('soundBtn').textContent='🔊 الصوت: '+(state.sound?'تشغيل':'إيقاف');$('soundBtn').setAttribute('aria-pressed',state.sound);if(!state.sound&&'speechSynthesis'in window)speechSynthesis.cancel();save()};$('musicBtn').onclick=()=>{state.music=!state.music;$('musicBtn').textContent='🎵 الموسيقى: '+(state.music?'تشغيل (غير متاحة في هذه النسخة)':'إيقاف');$('musicBtn').setAttribute('aria-pressed',state.music);if(state.music)alert('الموسيقى الخلفية غير مضافة في هذه النسخة. يمكنك استخدام زر نطق الكلمات.');state.music=false;$('musicBtn').textContent='🎵 الموسيقى: إيقاف';save()};
+renderMap();
+</script>
+</body></html>
